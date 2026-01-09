@@ -257,9 +257,4 @@ These assumptions were made to keep the focus on **backend design and logic**.
 
 ---
 
-## 13. Interview Summary (What to Say)
-
-> “This project simulates a trading backend where orders are placed, executed, and reflected in the portfolio. I focused on clean architecture, RESTful APIs, and core trading workflows rather than real market integration.”
-
----
 
