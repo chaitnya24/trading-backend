@@ -9,6 +9,9 @@ import tradeRouter from "./routes/tradeRoute.js";
 import portfolioRouter from "./routes/portfolioRoute.js";
 import authMiddleware from "./middleware/auth.js";
 
+import swaggerUi from "swagger-ui-express";
+import swaggerSpec from "./config/swagger.js";
+
 const app = express();
 const port = process.env.PORT || 4000;
 
@@ -16,6 +19,9 @@ app.use(express.json());
 app.use(cors());
 
 app.use(authMiddleware);
+
+// Swagger
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use("/api/v1/instruments", instrumentRouter);
 app.use("/api/v1/orders", orderRouter);
